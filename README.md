@@ -1,3 +1,3 @@
 # MathLib
 
-A description of this package.
+A simple math library written in Swift.
