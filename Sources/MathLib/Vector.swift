@@ -12,7 +12,13 @@ public typealias Float3 = SIMD3<Float>
 public typealias Float4 = SIMD4<Float>
 
 extension Float2 {
+    public init(_ v0: Double, _ v1: Double) {
+        self.init(Float(v0), Float(v1))
+    }
     
+    public init(x: Double, y: Double) {
+        self.init(x, y)
+    }
 }
 
 extension Float3 {
@@ -37,6 +43,14 @@ extension Float3 {
             y = newValue.x
             z = newValue.y
         }
+    }
+    
+    public init(_ v0: Double, _ v1: Double, _ v2: Double) {
+        self.init(Float(v0), Float(v1), Float(v2))
+    }
+    
+    public init(x: Double, y: Double, z: Double) {
+        self.init(x, y, z)
     }
 }
 
@@ -76,5 +90,13 @@ extension Float4 {
             z = newValue.x
             w = newValue.y
         }
+    }
+    
+    public init(_ v0: Double, _ v1: Double, _ v2: Double, _ v3: Double) {
+        self.init(Float(v0), Float(v1), Float(v2), Float(v3))
+    }
+    
+    public init(x: Double, y: Double, z: Double, w: Double) {
+        self.init(x, y, z, w)
     }
 }
