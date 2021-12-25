@@ -19,6 +19,14 @@ extension Float2 {
     public init(x: Double, y: Double) {
         self.init(x, y)
     }
+    
+    public init(_ v0: Int, _ v1: Int) {
+        self.init(Float(v0), Float(v1))
+    }
+    
+    public init(x: Int, y: Int) {
+        self.init(x, y)
+    }
 }
 
 extension Float3 {
@@ -50,6 +58,14 @@ extension Float3 {
     }
     
     public init(x: Double, y: Double, z: Double) {
+        self.init(x, y, z)
+    }
+    
+    public init(_ v0: Int, _ v1: Int, _ v2: Int) {
+        self.init(Float(v0), Float(v1), Float(v2))
+    }
+    
+    public init(x: Int, y: Int, z: Int) {
         self.init(x, y, z)
     }
 }
@@ -97,6 +113,14 @@ extension Float4 {
     }
     
     public init(x: Double, y: Double, z: Double, w: Double) {
+        self.init(x, y, z, w)
+    }
+    
+    public init(_ v0: Int, _ v1: Int, _ v2: Int, _ v3: Int) {
+        self.init(Float(v0), Float(v1), Float(v2), Float(v3))
+    }
+    
+    public init(x: Int, y: Int, z: Int, w: Int) {
         self.init(x, y, z, w)
     }
 }
