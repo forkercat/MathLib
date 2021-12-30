@@ -5,8 +5,6 @@
 //  Created by Junhao Wang on 12/16/21.
 //
 
-import simd
-
 extension Float {
     public var toDegrees: Float {
         self / Float.pi * 180.0

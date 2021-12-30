@@ -1,6 +1,4 @@
-// swift-tools-version:5.5
-// The swift-tools-version declares the minimum version of Swift required to build this package.
-
+// swift-tools-version:5.3
 import PackageDescription
 
 let package = Package(
@@ -12,13 +10,17 @@ let package = Package(
             targets: ["MathLib"]),
     ],
     
-    dependencies: [
-        
-    ],
+    dependencies: [],
     
     targets: [
         .target(
             name: "MathLib",
             dependencies: []),
+        
+        .target(
+            name: "MathLib-Demo",
+            dependencies: [
+                "MathLib"
+            ])
     ]
 )

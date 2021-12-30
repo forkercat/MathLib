@@ -5,8 +5,6 @@
 //  Created by Junhao Wang on 12/16/21.
 //
 
-import simd
-
 // Rect
 public struct Rect {
     public var left: Float = 0
@@ -40,22 +38,3 @@ public struct Bounds2 {
 extension Bounds2: Equatable { }
 extension Bounds2: Hashable { }
 extension Bounds2: Codable { }
-
-// Size
-//public struct Size<Value> where Value: Numeric {
-//    public var width: Value
-//    public var height: Value
-//    
-//    public init(width: Value, height: Value) {
-//        self.width = width
-//        self.height = height
-//    }
-//    
-//    public var description: String {
-//        "\(width) x \(height)"
-//    }
-//}
-//
-//extension Size: Equatable where Value: Equatable { }
-//extension Size: Hashable where Value: Hashable { }
-//extension Size: Codable where Value: Codable { }
