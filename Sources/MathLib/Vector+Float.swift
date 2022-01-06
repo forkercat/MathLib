@@ -5,6 +5,12 @@
 //  Created by Junhao Wang on 1/5/22.
 //
 
+extension Float3 {
+    public static let right   = Float3(1, 0, 0)
+    public static let up      = Float3(0, 1, 0)
+    public static let forward = Float3(0, 0, 1)
+}
+
 extension Float2 {
     public var width: Float { x }
     public var height: Float { y }
