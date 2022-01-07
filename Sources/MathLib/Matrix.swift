@@ -10,6 +10,12 @@ import simd
 public typealias Float3x3 = float3x3
 public typealias Float4x4 = float4x4
 
+extension Float3x3 {
+    public static var identity: Float3x3 {
+        get { matrix_identity_float3x3 }
+    }
+}
+
 extension Float4x4 {
     public static var identity: Float4x4 {
         get { matrix_identity_float4x4 }
