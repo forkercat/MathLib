@@ -38,11 +38,26 @@ let package = Package(
 ```swift
 import MathLib
 
-let v3 = Float3(x: 1, y: 2, z: 3)
-let v4 = Float4(xyz: v3, w: 4)
+let v1 = Float3(x: 1, y: 2, z: 3)
+let v2 = Float3(x: 300, y: 20, z: 1)
 
-print(v4)
+let v3 = Float4(xyz: v2, w: 4)
+let v4 = Float4(1, 123.123, 25, 1344)
+
+print(v1.str)
+print(v2.str)
+
+print(v3.str3f)
+print(v4.str3f)
 
 // Output
-// SIMD4<Float>(1.0, 2.0, 3.0, 4.0)
+Float3 [   1.0,   2.0,   3.0 ]
+Float3 [ 300.0,  20.0,   1.0 ]
+Float4 [  300.000,   20.000,    1.000,    4.000 ]
+Float4 [    1.000,  123.123,   25.000, 1344.000 ]
+
+Float4x4 [[   1.0,   0.0,   0.0,   0.0 ],
+          [   0.0,   1.0,   0.0,   0.0 ],
+          [   0.0,   0.0,   1.0,   0.0 ],
+          [   0.0,   0.0,   0.0,   1.0 ]]
 ```

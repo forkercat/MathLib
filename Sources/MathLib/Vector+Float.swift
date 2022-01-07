@@ -5,6 +5,8 @@
 //  Created by Junhao Wang on 1/5/22.
 //
 
+import Foundation
+
 extension Float3 {
     public static let right   = Float3(1, 0, 0)
     public static let up      = Float3(0, 1, 0)
@@ -29,6 +31,14 @@ extension Float2 {
     
     public init(x: Int, y: Int) {
         self.init(x, y)
+    }
+        
+    public var str: String {
+        return String(format: "Float2 [ %5.1f, %5.1f ]", x, y)
+    }
+    
+    public var str3f: String {
+        return String(format: "Float2 [ %8.3f, %8.3f ]", x, y)
     }
 }
 
@@ -70,6 +80,14 @@ extension Float3 {
     
     public init(x: Int, y: Int, z: Int) {
         self.init(x, y, z)
+    }
+    
+    public var str: String {
+        return String(format: "Float3 [ %5.1f, %5.1f, %5.1f ]", x, y, z)
+    }
+    
+    public var str3f: String {
+        return String(format: "Float3 [ %8.3f, %8.3f, %8.3f ]", x, y, z)
     }
 }
 
@@ -125,5 +143,13 @@ extension Float4 {
     
     public init(x: Int, y: Int, z: Int, w: Int) {
         self.init(x, y, z, w)
+    }
+    
+    public var str: String {
+        return String(format: "Float4 [ %5.1f, %5.1f, %5.1f, %5.1f ]", x, y, z, w)
+    }
+    
+    public var str3f: String {
+        return String(format: "Float4 [ %8.3f, %8.3f, %8.3f, %8.3f ]", x, y, z, w)
     }
 }

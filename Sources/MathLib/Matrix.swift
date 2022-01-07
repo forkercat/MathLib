@@ -10,9 +10,35 @@ import simd
 public typealias Float3x3 = float3x3
 public typealias Float4x4 = float4x4
 
+private let floatPrefixLength = 7
+
 extension Float3x3 {
     public static var identity: Float3x3 {
         get { matrix_identity_float3x3 }
+    }
+    
+    public var str: String {
+        let r0 = Float3(columns.0.x, columns.1.x, columns.2.x)
+        let r1 = Float3(columns.0.y, columns.1.y, columns.2.y)
+        let r2 = Float3(columns.0.z, columns.1.z, columns.2.z)
+        return """
+        
+        Float3x3 [\(r0.str.dropFirst(floatPrefixLength)),
+                  \(r1.str.dropFirst(floatPrefixLength)),
+                  \(r2.str.dropFirst(floatPrefixLength))]
+        """
+    }
+    
+    public var str3f: String {
+        let r0 = Float3(columns.0.x, columns.1.x, columns.2.x)
+        let r1 = Float3(columns.0.y, columns.1.y, columns.2.y)
+        let r2 = Float3(columns.0.z, columns.1.z, columns.2.z)
+        return """
+        
+        Float3x3 [\(r0.str3f.dropFirst(floatPrefixLength)),
+                  \(r1.str3f.dropFirst(floatPrefixLength)),
+                  \(r2.str3f.dropFirst(floatPrefixLength))]
+        """
     }
 }
 
@@ -21,10 +47,38 @@ extension Float4x4 {
         get { matrix_identity_float4x4 }
     }
     
+    public var str: String {
+        let r0 = Float4(columns.0.x, columns.1.x, columns.2.x, columns.3.x)
+        let r1 = Float4(columns.0.y, columns.1.y, columns.2.y, columns.3.y)
+        let r2 = Float4(columns.0.z, columns.1.z, columns.2.z, columns.3.z)
+        let r3 = Float4(columns.0.w, columns.1.w, columns.2.w, columns.3.w)
+        return """
+        
+        Float4x4 [\(r0.str.dropFirst(floatPrefixLength)),
+                  \(r1.str.dropFirst(floatPrefixLength)),
+                  \(r2.str.dropFirst(floatPrefixLength)),
+                  \(r3.str.dropFirst(floatPrefixLength))]
+        """
+    }
+    
+    public var str3f: String {
+        let r0 = Float4(columns.0.x, columns.1.x, columns.2.x, columns.3.x)
+        let r1 = Float4(columns.0.y, columns.1.y, columns.2.y, columns.3.y)
+        let r2 = Float4(columns.0.z, columns.1.z, columns.2.z, columns.3.z)
+        let r3 = Float4(columns.0.w, columns.1.w, columns.2.w, columns.3.w)
+        return """
+        
+        Float4x4 [\(r0.str3f.dropFirst(floatPrefixLength)),
+                  \(r1.str3f.dropFirst(floatPrefixLength)),
+                  \(r2.str3f.dropFirst(floatPrefixLength)),
+                  \(r3.str3f.dropFirst(floatPrefixLength))]
+        """
+    }
+    
     // Translate
     public init(translation: Float3) {
         let matrix = Float4x4(
-            [            1,             0,             0, 0],
+            [            1,             0,             0, 0],  // column
             [            0,             1,             0, 0],
             [            0,             0,             1, 0],
             [translation.x, translation.y, translation.z, 1]
@@ -56,7 +110,7 @@ extension Float4x4 {
         let matrix = Float4x4(
             [1,           0,          0, 0],
             [0,  cos(angle), sin(angle), 0],
-            [0, -cos(angle), cos(angle), 0],
+            [0, -sin(angle), cos(angle), 0],  // left-handed
             [0,           0,          0, 1]
         )
         self = matrix
@@ -83,16 +137,16 @@ extension Float4x4 {
     }
     
     public init(rotation angle: Float3) {
-        let rotationX = float4x4(rotationX: angle.x)
-        let rotationY = float4x4(rotationY: angle.y)
-        let rotationZ = float4x4(rotationZ: angle.z)
+        let rotationX = Float4x4(rotationX: angle.x)
+        let rotationY = Float4x4(rotationY: angle.y)
+        let rotationZ = Float4x4(rotationZ: angle.z)
         self = rotationX * rotationY * rotationZ
     }
     
     public init(rotationYXZ angle: Float3) {
-        let rotationX = float4x4(rotationX: angle.x)
-        let rotationY = float4x4(rotationY: angle.y)
-        let rotationZ = float4x4(rotationZ: angle.z)
+        let rotationX = Float4x4(rotationX: angle.x)
+        let rotationY = Float4x4(rotationY: angle.y)
+        let rotationZ = Float4x4(rotationZ: angle.z)
         self = rotationY * rotationX * rotationZ
     }
     

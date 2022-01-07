@@ -12,6 +12,10 @@ extension Int2 {
     public init(x: Int, y: Int) {
         self.init(x, y)
     }
+    
+    public var str: String {
+        return String(format: "Int2 [ %4d, %4d ]", x, y)
+    }
 }
 
 extension Int3 {
@@ -40,6 +44,10 @@ extension Int3 {
 
     public init(x: Int, y: Int, z: Int) {
         self.init(x, y, z)
+    }
+    
+    public var str: String {
+        return String(format: "Int3 [ %4d, %4d, %4d ]", x, y, z)
     }
 }
 
@@ -83,6 +91,10 @@ extension Int4 {
 
     public init(x: Int, y: Int, z: Int, w: Int) {
         self.init(x, y, z, w)
+    }
+    
+    public var str: String {
+        return String(format: "Int4 [ %4d, %4d, %4d, %4d ]", x, y, z, w)
     }
 }
 

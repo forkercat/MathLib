@@ -7,10 +7,16 @@
 
 import MathLib
 
-let v3 = Float3(x: 1, y: 2, z: 3)
-let v4 = Float4(xyz: v3, w: 4)
+let v1 = Float3(x: 1, y: 2, z: 3)
+let v2 = Float3(x: 300, y: 20, z: 1)
 
-print(v4)
+let v3 = Float4(xyz: v2, w: 4)
+let v4 = Float4(1, 123.123, 25, 1344)
 
-// Output
-// SIMD4<Float>(1.0, 2.0, 3.0, 4.0)
+print(v1.str)
+print(v2.str)
+
+print(v3.str3f)
+print(v4.str3f)
+
+print(Float4x4.identity.str)
