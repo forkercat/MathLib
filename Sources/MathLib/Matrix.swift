@@ -7,10 +7,37 @@
 
 import simd
 
+public typealias Float2x2 = float2x2
 public typealias Float3x3 = float3x3
 public typealias Float4x4 = float4x4
 
 private let floatPrefixLength = 7
+
+extension Float2x2 {
+    public static var identity: Float2x2 {
+        get { matrix_identity_float2x2 }
+    }
+    
+    public var str: String {
+        let r0 = Float2(columns.0.x, columns.1.x)
+        let r1 = Float2(columns.0.y, columns.1.y)
+        return """
+        
+        Float2x2 [\(r0.str.dropFirst(floatPrefixLength)),
+                  \(r1.str.dropFirst(floatPrefixLength))]
+        """
+    }
+    
+    public var str3f: String {
+        let r0 = Float2(columns.0.x, columns.1.x)
+        let r1 = Float2(columns.0.y, columns.1.y)
+        return """
+        
+        Float2x2 [\(r0.str3f.dropFirst(floatPrefixLength)),
+                  \(r1.str3f.dropFirst(floatPrefixLength))]
+        """
+    }
+}
 
 extension Float3x3 {
     public static var identity: Float3x3 {
