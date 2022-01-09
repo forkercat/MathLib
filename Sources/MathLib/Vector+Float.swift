@@ -8,9 +8,9 @@
 import Foundation
 
 extension Float3 {
-    public static let right   = [1, 0, 0]
-    public static let up      = [0, 1, 0]
-    public static let forward = [0, 0, 1]
+    public static let right: Float3   = [1.0, 0.0, 0.0]
+    public static let up: Float3      = [0.0, 1.0, 0.0]
+    public static let forward: Float3 = [0.0, 0.0, 1.0]
 }
 
 extension Float2 {

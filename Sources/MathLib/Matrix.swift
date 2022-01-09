@@ -184,6 +184,10 @@ extension Float4x4 {
         return Float3x3(columns: (c0, c1, c2))
     }
     
+    public var normalMatrix: Float3x3 {
+        return self.inverse.transpose.upperLeft
+    }
+    
     // Left-handed LookAt Matrix
     public init(eye: Float3, center: Float3, up: Float3) {
         let z = normalize(center - eye)  // forward
