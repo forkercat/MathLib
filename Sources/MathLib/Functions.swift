@@ -8,6 +8,19 @@
 import simd
 import Foundation
 
+// MARK: - Quaternion Functions
+@inlinable public func mul(_ q1: Quaternion, _ q2: Quaternion) -> Quaternion {
+    return q1 * q2
+}
+
+@inlinable public func add(_ q1: Quaternion, _ q2: Quaternion) -> Quaternion {
+    return q1 + q2
+}
+
+@inlinable public func sub(_ q1: Quaternion, _ q2: Quaternion) -> Quaternion {
+    return q1 - q2
+}
+
 // MARK: - Matrix Functions
 
 // Multiply

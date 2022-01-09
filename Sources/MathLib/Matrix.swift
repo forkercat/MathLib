@@ -163,18 +163,25 @@ extension Float4x4 {
         self = matrix
     }
     
-    public init(rotation angle: Float3) {
-        let rotationX = Float4x4(rotationX: angle.x)
-        let rotationY = Float4x4(rotationY: angle.y)
-        let rotationZ = Float4x4(rotationZ: angle.z)
-        self = rotationX * rotationY * rotationZ
+    public init(rotationXYZ angle: Float3) {
+        let X = Float4x4(rotationX: angle.x)
+        let Y = Float4x4(rotationY: angle.y)
+        let Z = Float4x4(rotationZ: angle.z)
+        self = Z * Y * X
+    }
+    
+    public init(rotationZXY angle: Float3) {
+        let X = Float4x4(rotationX: angle.x)
+        let Y = Float4x4(rotationY: angle.y)
+        let Z = Float4x4(rotationZ: angle.z)
+        self = Y * X * Z
     }
     
     public init(rotationYXZ angle: Float3) {
-        let rotationX = Float4x4(rotationX: angle.x)
-        let rotationY = Float4x4(rotationY: angle.y)
-        let rotationZ = Float4x4(rotationZ: angle.z)
-        self = rotationY * rotationX * rotationZ
+        let X = Float4x4(rotationX: angle.x)
+        let Y = Float4x4(rotationY: angle.y)
+        let Z = Float4x4(rotationZ: angle.z)
+        self = Z * X * Y
     }
     
     public var upperLeft: Float3x3 {
