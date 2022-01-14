@@ -40,6 +40,14 @@ extension Float2 {
     public var str3f: String {
         return String(format: "Float2 [ %8.3f, %8.3f ]", x, y)
     }
+    
+    public var toDegrees: Float2 {
+        return Float2(x.toDegrees, y.toDegrees)
+    }
+    
+    public var toRadians: Float2 {
+        return Float2(x.toRadians, y.toRadians)
+    }
 }
 
 extension Float3 {
@@ -88,6 +96,14 @@ extension Float3 {
     
     public var str3f: String {
         return String(format: "Float3 [ %8.3f, %8.3f, %8.3f ]", x, y, z)
+    }
+    
+    public var toDegrees: Float3 {
+        return Float3(x.toDegrees, y.toDegrees, z.toDegrees)
+    }
+    
+    public var toRadians: Float3 {
+        return Float3(x.toRadians, y.toRadians, z.toRadians)
     }
 }
 
@@ -151,5 +167,13 @@ extension Float4 {
     
     public var str3f: String {
         return String(format: "Float4 [ %8.3f, %8.3f, %8.3f, %8.3f ]", x, y, z, w)
+    }
+    
+    public var toDegrees: Float4 {
+        return Float4(x.toDegrees, y.toDegrees, z.toDegrees, w.toDegrees)
+    }
+    
+    public var toRadians: Float4 {
+        return Float4(x.toRadians, y.toRadians, z.toRadians, w.toRadians)
     }
 }
