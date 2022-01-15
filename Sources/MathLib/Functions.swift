@@ -101,15 +101,15 @@ import Foundation
 }
 
 // Length
-@inlinable public func dot(_ v: Float2) -> Float {
+@inlinable public func length(_ v: Float2) -> Float {
     return simd_length(v)
 }
 
-@inlinable public func dot(_ v: Float3) -> Float {
+@inlinable public func length(_ v: Float3) -> Float {
     return simd_length(v)
 }
 
-@inlinable public func dot(_ v: Float4) -> Float {
+@inlinable public func length(_ v: Float4) -> Float {
     return simd_length(v)
 }
 
